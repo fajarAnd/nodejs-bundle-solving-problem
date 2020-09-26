@@ -27,8 +27,6 @@ const packArrange = ({ apple, cake }) => (prev, curr) => {
     return R.concat(prev, arr)
 }
 const resultArrange = ({ cake, apple }) => R.reduce(packArrange({ cake, apple }), [], generateSequence(cake, apple))
-R.reduce(R.minBy(square), Infinity, [3, -5, 4, 1, -2]); //=> 1
-
 // const bestPack = detailPack => detailPack.itemLeft
 // const pickBestPack = R.reduce(R.minBy(bestPack)
 
