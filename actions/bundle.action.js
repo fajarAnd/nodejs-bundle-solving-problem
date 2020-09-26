@@ -1,3 +1,4 @@
+const minBy = require('lodash/minBy');
 const R = require('ramda');
 const { generateSequence } = require('../helpers')
 
@@ -15,7 +16,7 @@ const packArrange = ({ apple, cake }) => (prev, curr) => {
       return [];
     }
 
-    const obj = R.applySpec({
+    const packDetail = R.applySpec({
         box: R.identity,
         itemLeft: bundling({ apple, cake }),
         appleInbox: itemInBox(apple),
@@ -23,15 +24,20 @@ const packArrange = ({ apple, cake }) => (prev, curr) => {
     })
 
     const arr = [];
-    arr.push(obj(curr));
+    arr.push(packDetail(curr));
     return R.concat(prev, arr)
 }
 const resultArrange = ({ cake, apple }) => R.reduce(packArrange({ cake, apple }), [], generateSequence(cake, apple))
-// const bestPack = detailPack => detailPack.itemLeft
-// const pickBestPack = R.reduce(R.minBy(bestPack)
+
+const pickBestPack = (listPack) => minBy(listPack, pack => pack.itemLeft)
 
 module.exports = {
   bundling,
   packArrange,
-  resultArrange
+  resultArrange,
+  pickBestPack,
+  main: R.pipe(
+    resultArrange,
+    pickBestPack
+  ),
 }

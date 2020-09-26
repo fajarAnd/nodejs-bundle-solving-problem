@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/fajarAnd/nodejs-problem-solving-bundle#readme",
   "dependencies": {
+    "lodash": "^4.17.20",
     "ramda": "^0.27.1"
   },
   "devDependencies": {

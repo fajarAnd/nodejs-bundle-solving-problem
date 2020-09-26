@@ -1,1 +1,1 @@
-# nodejs-bundle-solving-problem
+# nodejs-problem-solving-bundle

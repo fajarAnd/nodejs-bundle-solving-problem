@@ -64,4 +64,32 @@ describe('Bundle Action unit Test', () => {
     })
   })
 
+  describe('Pick Best Pack', () => {
+    it('Return best pack ', () => {
+      const expectedResult = {
+        "box": 5,
+        "itemLeft": 0,
+        "appleInbox": 5,
+        "cakeInbox": 4
+      };
+      const result = bundleAction.pickBestPack(listDetailPack)
+      assert.isDefined(result);
+      assert.deepEqual(expectedResult, result)
+    })
+  })
+
+  describe('Main Function', () => {
+    it('Return Detail Pack', () => {
+      const expectedResult = {
+        "box": 5,
+        "itemLeft": 0,
+        "appleInbox": 5,
+        "cakeInbox": 4
+      };
+      const result = bundleAction.pickBestPack(listDetailPack)
+      assert.isDefined(result);
+      assert.deepEqual(expectedResult, result)
+    })
+  })
+
 });
