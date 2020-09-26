@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --recursive --exit --reporter spec --timeout 12000 __UNIT_TEST__/*"
+    "test": "./node_modules/mocha/bin/mocha --recursive --exit --reporter spec --timeout 12000 __UNIT_TEST__/*",
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
